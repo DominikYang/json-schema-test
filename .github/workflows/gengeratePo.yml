@@ -16,6 +16,8 @@ jobs:
       with:
         maven-version: 3.6.1
     - uses: actions/checkout@v2
+      persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+      fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - uses: actions/setup-java@v1
       with:
         java-version: '9.0.4' # The JDK version to make available on the path.
