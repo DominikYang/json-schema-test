@@ -33,7 +33,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        repository: https://github.com/DominikYang/java-demo-test.git
+        repository: DominikYang/java-demo-test
         github_token: ${{ secrets.JAVA_REPO_TOKEN }}
 
 
