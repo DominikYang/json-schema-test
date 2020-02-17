@@ -15,6 +15,12 @@ jobs:
       uses: aahmed-se/setup-maven@v3
       with:
         maven-version: 3.6.1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '9.0.4' # The JDK version to make available on the path.
+        java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+        architecture: x64 # (x64 or x86) - defaults to x64
     - name: Build with Maven
       run: mvn jsonschema2pojo:generate --file pom.xml
     - name: git add
@@ -28,7 +34,7 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         repository: DominikYang/java-demo-test
-        github_token: ${{ secrets.JAVA_REPO_TOKEN }}
+        github_token: ${{ secrets.MY_TOKEN }}
 
 
 
