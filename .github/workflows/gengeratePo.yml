@@ -21,7 +21,6 @@ jobs:
 #        cp -b -r schema /home/runner/work/java-demo-test/src/main/resources/schema
 #        cd /home/runner/work/java-demo-test/src/main/resources/schema
     - run: pwd
-    - run: ls
 
 
 
