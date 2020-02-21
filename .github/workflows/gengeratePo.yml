@@ -26,6 +26,9 @@ jobs:
     - run: |
         cd /tmp/workspace/java-demo-test/src/main/resources/schema
         ls -all
+    - name: ssh setting
+      run: |
+
     - name: add commit
       run: |
         cd /tmp/workspace/java-demo-test
@@ -34,9 +37,9 @@ jobs:
         git config --local user.name "DominikYang"
         git commit -m "api changes" -a
     - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.TK4THIS }}
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.TK4THIS }}
 
 
 
