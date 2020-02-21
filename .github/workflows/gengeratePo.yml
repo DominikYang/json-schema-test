@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: clone target repo
       run: |
-        ls -all -h
+        pwd
         cd /home/runner/work
         git clone https://github.com/DominikYang/java-demo-test.git
     - run: ls -all
