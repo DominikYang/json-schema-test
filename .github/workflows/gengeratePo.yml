@@ -12,14 +12,14 @@ jobs:
     - name: setting
       env:
         PUSH_KEY: ${{ secrets.PUSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$PUSH_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com > ~/.ssh/known_hosts
-          chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
-          git config --global user.email "453822487@qq.com"
-          git config --global user.name "Dominikyang"
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$PUSH_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com > ~/.ssh/known_hosts
+        chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
+        git config --global user.email "453822487@qq.com"
+        git config --global user.name "Dominikyang"
     - name: clone target repo
       run: |
         pwd
