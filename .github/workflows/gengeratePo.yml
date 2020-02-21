@@ -16,6 +16,7 @@ jobs:
         pwd
         cd /home/runner/work
         git clone https://github.com/DominikYang/java-demo-test.git
+        cd /home/runner/work/java-demo-test/java-demo-test/src/main/resources/schema
     - run: ls -all
 #    - name: copy file to target directory
 #      run: |
