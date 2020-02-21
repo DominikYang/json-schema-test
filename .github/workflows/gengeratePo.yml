@@ -15,15 +15,15 @@ jobs:
       run: |
         pwd
         cd ..
-        pwd
         git clone https://github.com/DominikYang/java-demo-test.git
+        cd java-demo-test
+        pwd
     - name: copy file to target directory
       run: |
-        pwd
         cd /home/runner/work/json-schema-test/json-schema-test
         pwd
-        cp -b -r schema /home/runner/work/json-schema-test/java-demo-test/src/main/resources/schema
-        cd ../java-demo-test/src/main/resources/schema
+        cp -b -r /home/runner/work/json-schema-test/json-schema-test/schema /home/runner/work/json-schema-test/java-demo-test/src/main/resources/schema
+        cd /home/runner/work/json-schema-test/java-demo-test/src/main/resources/schema
         ls
 #    - run: |
 #        pwd
