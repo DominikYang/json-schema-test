@@ -39,7 +39,7 @@ jobs:
         git status
         git add -A
         git commit -m "api schema changes" -a
-        git push origin master
+        git push -u origin master
 #    - run: |
 #        cd /tmp/workspace/java-demo-test/src/main/resources/schema
 #        ls -all
