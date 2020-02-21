@@ -32,8 +32,8 @@ jobs:
 #        cd /tmp/workspace/dira/java-demo-test
 #        git config --local user.email "453822487@qq.com"
 #        git config --local user.name "DominikYang"
-#    - name: add commit
-     - run: |
+    - name: add commit
+      run: |
         git add -A
         git config --local user.email "453822487@qq.com"
         git config --local user.name "DominikYang"
