@@ -22,10 +22,10 @@ jobs:
       run: |
         cd /tmp/workspace/java-demo-test
         pwd
-        git status
         cp -b -rf /tmp/workspace/json-schema-test/schema /tmp/workspace/java-demo-test/src/main/resources
+        git status
     - run: |
-        cd /tmp/workspace/dira/java-demo-test/src/main/resources/schema
+        cd /tmp/workspace/java-demo-test/src/main/resources/schema
         ls -all
 #    - name: ssh setting
 #      run: |
