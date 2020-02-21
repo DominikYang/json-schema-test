@@ -15,25 +15,32 @@ jobs:
         cd /tmp
         mkdir workspace
         cd workspace
+        mkdir dira
+        cd dira
         git clone https://github.com/DominikYang/java-demo-test.git
+        cd ../dirb
+        mkdir dirb
         git clone https://github.com/DominikYang/json-schema-test.git
         pwd
     - name: copy file to target directory
       run: |
-        cd /tmp/workspace/json-schema-test
+        cd /tmp/workspace/dirb/json-schema-test
         pwd
-        cp -b -rf schema /tmp/workspace/java-demo-test/src/main/resources
+        cp -b -rf schema /tmp/workspace/dira/java-demo-test/src/main/resources
     - run: |
-        cd /tmp/workspace/java-demo-test/src/main/resources/schema
+        cd /tmp/workspace/dira/java-demo-test/src/main/resources/schema
         ls -all
-    - name: ssh setting
-      run: |
-        cd /tmp/workspace/java-demo-test
-        git config --local user.email "453822487@qq.com"
-        git config --local user.name "DominikYang"
+#    - name: ssh setting
+#      run: |
+#        cd /tmp/workspace/dira/java-demo-test
+#        git config --local user.email "453822487@qq.com"
+#        git config --local user.name "DominikYang"
     - name: add commit
       run: |
+        cd /tmp/workspace/dira/java-demo-test
         git add -A
+        git config --local user.email "453822487@qq.com"
+        git config --local user.name "DominikYang"
         git commit -m "api changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
