@@ -17,12 +17,12 @@ jobs:
         cd ..
         git clone https://github.com/DominikYang/java-demo-test.git
         cd java-demo-test/src/main/resources/schema
-    - run: ls -all
-#    - name: copy file to target directory
-#      run: |
-#        cd /home/runner/work/json-schema-test/json-schema-test
-#        cp -b -r schema /home/runner/work/java-demo-test/java-demo-test/src/main/resources/schema
-#        cd /home/runner/work/java-demo-test/java-demo-test/src/main/resources/schema
+    - name: copy file to target directory
+      run: |
+        cd ../json-schema-test
+        cp -b -r schema /home/runner/work/json-schema-test/java-demo-test/src/main/resources/schema
+        cd ../java-demo-test/src/main/resources/schema
+        ls
 #    - run: |
 #        pwd
 #        ls -a
