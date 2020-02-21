@@ -15,8 +15,7 @@ jobs:
       run: |
         cd /home/runner/work
         git clone https://github.com/DominikYang/java-demo-test.git
-        cd java-demo-test/schema
-        pwd
+        ls
 
 
 
