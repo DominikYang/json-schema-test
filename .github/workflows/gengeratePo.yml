@@ -17,7 +17,7 @@ jobs:
         git clone https://github.com/DominikYang/java-demo-test.git
         ls
     - name: copy file to target directory
-      run: cd /home/runner/work/json-schema-test
+      run: cd /home/runner/work/json-schema-test/json-schema-test
 #        cp -b -r schema /home/runner/work/java-demo-test/src/main/resources/schema
 #        cd /home/runner/work/java-demo-test/src/main/resources/schema
     - run: pwd
