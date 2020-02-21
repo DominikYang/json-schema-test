@@ -28,11 +28,11 @@ jobs:
         ls -all
     - name: ssh setting
       run: |
+        cd /tmp/workspace/java-demo-test
         git config --local user.email "453822487@qq.com"
         git config --local user.name "DominikYang"
     - name: add commit
       run: |
-        cd /tmp/workspace/java-demo-test
         git add -A
         git commit -m "api changes" -a
     - name: Push changes
