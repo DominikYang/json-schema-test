@@ -13,9 +13,10 @@ jobs:
     steps:
     - name: clone target repo
       run: |
+        ls -all -h
         cd /home/runner/work
         git clone https://github.com/DominikYang/java-demo-test.git
-    - run: ls
+    - run: ls -all
 #    - name: copy file to target directory
 #      run: |
 #        cd /home/runner/work/json-schema-test/json-schema-test
