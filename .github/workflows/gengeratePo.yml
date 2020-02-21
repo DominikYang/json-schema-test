@@ -7,24 +7,24 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: clone target repo
       run: |
         pwd
-        cd ..
+        cd /home
+        mkdir workspace
+        cd workspace
         git clone https://github.com/DominikYang/java-demo-test.git
-        cd java-demo-test
+        git clone https://github.com/DominikYang/json-schema-test.git
         pwd
     - name: copy file to target directory
       run: |
-        cd /home/runner/work/json-schema-test/json-schema-test
+        cd /home/workspace/json-schema-test
         pwd
-        cp -b -r /home/runner/work/json-schema-test/json-schema-test/schema /home/runner/work/json-schema-test/java-demo-test/src/main/resources/schema
-        cd /home/runner/work/json-schema-test/java-demo-test/src/main/resources/schema
-        ls
+        cp -b -r schema /home/java-demo-test/src/main/resources/schema
+        cd /home/java-demo-test/src/main/resources/schema
+        ls -all
 #    - run: |
 #        pwd
 #        ls -a
