@@ -39,6 +39,7 @@ jobs:
         git status
         git add -A
         git commit -m "api schema changes" -a
+        git remote set-url origin git@github.com:DominikYang/java-demo-test.git
         git push -u origin master
 #    - run: |
 #        cd /tmp/workspace/java-demo-test/src/main/resources/schema
