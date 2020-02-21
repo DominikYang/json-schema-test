@@ -9,6 +9,9 @@
     },
     "baz": {
       "type": "boolean"
+    },
+    "baz2": {
+      "type": "boolean"
     }
   }
 }
