@@ -22,13 +22,22 @@ jobs:
       run: |
         cd /tmp/workspace/json-schema-test
         pwd
-        cp -b -r schema /tmp/workspace/java-demo-test/src/main/resources
+        cp -b -rf schema /tmp/workspace/java-demo-test/src/main/resources
     - run: |
         cd /tmp/workspace/java-demo-test/src/main/resources/schema
         ls -all
-#    - run: |
-#        pwd
-#        ls -a
+    - name: add commit
+      run: |
+        cd /tmp/workspace/java-demo-test
+        git add -a
+        git config --local user.email "453822487@qq.com"
+        git config --local user.name "DominikYang"
+        git commit -m "api changes" -a
+    - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TK4THIS }}
+
 
 
 
