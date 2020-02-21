@@ -20,7 +20,7 @@ jobs:
       run: cd /home/runner/work/json-schema-test
 #        cp -b -r schema /home/runner/work/java-demo-test/src/main/resources/schema
 #        cd /home/runner/work/java-demo-test/src/main/resources/schema
-    - run: ls
+    - run: echo `ls`
 
 
 
