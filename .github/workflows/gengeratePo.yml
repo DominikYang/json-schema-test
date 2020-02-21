@@ -24,6 +24,10 @@ jobs:
         pwd
         cp -b -rf /tmp/workspace/json-schema-test/schema /tmp/workspace/java-demo-test/src/main/resources
         git status
+        git add -A
+        git config --local user.email "453822487@qq.com"
+        git config --local user.name "DominikYang"
+        git commit -m "api schema changes" -a
 #    - run: |
 #        cd /tmp/workspace/java-demo-test/src/main/resources/schema
 #        ls -all
@@ -32,12 +36,12 @@ jobs:
 #        cd /tmp/workspace/dira/java-demo-test
 #        git config --local user.email "453822487@qq.com"
 #        git config --local user.name "DominikYang"
-    - name: add commit
-      run: |
-        git add -A
-        git config --local user.email "453822487@qq.com"
-        git config --local user.name "DominikYang"
-        git commit -m "api schema changes" -a
+#    - name: add commit
+#      run: |
+#        git add -A
+#        git config --local user.email "453822487@qq.com"
+#        git config --local user.name "DominikYang"
+#        git commit -m "api schema changes" -a
 #    - name: Push changes
 #      uses: ad-m/github-push-action@master
 #      with:
