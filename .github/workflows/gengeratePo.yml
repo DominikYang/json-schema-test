@@ -22,8 +22,8 @@ jobs:
       run: |
         cd /tmp/workspace/json-schema-test
         pwd
-        cp -b -r schema /tmp/java-demo-test/src/main/resources/schema
-        cd /tmp/java-demo-test/src/main/resources/schema
+        cp -b -r schema /tmp/workspace/java-demo-test/src/main/resources/schema
+        cd /tmp/workspace/java-demo-test/src/main/resources/schema
         ls -all
 #    - run: |
 #        pwd
