@@ -19,10 +19,14 @@ jobs:
           cd workdir
           mkdir output
           cd ..
-      - name: checkout
-        uses: actions/checkout@master
+      - name: clone
+        run: |
+          git clone git@github.com:DominikYang/json-schema-test.git
+          cd json-schema-test
       - name: generate
-        run: java -jar jsonschema2pojo.jar -srcPath=/tmp/workdir/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
+        run: |
+          java -jar jsonschema2pojo.jar -srcPath=/tmp/workdir/json-schema-test/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
+          cd /tmp/workdir
       - name: push
         uses: wu-yu-xuan/deploy-github-pages@action
         with:
