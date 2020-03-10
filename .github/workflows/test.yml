@@ -22,7 +22,9 @@ jobs:
       - name: clone
         uses: actions/checkout@master
       - name: check
-        run: ls -la
+        run: |
+          ls -la
+          pwd
       - name: generate
         run: java -jar jsonschema2pojo.jar -srcPath=/tmp/workdir/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
       - name: push
