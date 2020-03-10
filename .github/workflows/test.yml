@@ -31,6 +31,7 @@ jobs:
           mkdir output
           cd ..
           git clone git@github.com:DominikYang/json-schema-2-pojo.git
+          ls -la
           pwd
       - name: clone
         uses: actions/checkout@master
