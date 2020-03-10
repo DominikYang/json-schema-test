@@ -16,7 +16,7 @@ jobs:
         run: |
           cd /tmp
           mkdir workdir
-          cd mkdir
+          cd workdir
           mkdir output
           cd ..
       - name: checkout
@@ -28,6 +28,7 @@ jobs:
         with:
           personal_token: ${{ secrets.PUSH_KEY }}
           commit_message: ${{ github.event.head_commit.message }}
+          publish_repo: DominikYang/java-demo-test
           publish_branch: master
           source_dir: output
           dest_dir: src/main/java
