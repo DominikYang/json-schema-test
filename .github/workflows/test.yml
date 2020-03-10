@@ -1,5 +1,4 @@
 name: 'push json to java repo'
-
 on:
   push:
     branches:
@@ -22,7 +21,6 @@ jobs:
           cd ..
       - name: checkout
         uses: actions/checkout@master
-      - name: create directory
       - name: generate
         run: java -jar -srcPath=/tmp/workdir/schema -outPath=/tmp/workdir/output -packageNameForVO=com.example.test.vo -packageNameForDTO=com.example.test.dto
       - name: push
