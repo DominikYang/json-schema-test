@@ -32,7 +32,7 @@ jobs:
       - name: push
         uses: wu-yu-xuan/deploy-github-pages@action
         with:
-          personal_token: ${{ secrets.PUSH_KEY }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           commit_message: ${{ github.event.head_commit.message }}
           publish_branch: test
           source_dir: /tmp/workdir/output
