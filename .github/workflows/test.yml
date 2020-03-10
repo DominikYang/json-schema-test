@@ -26,7 +26,9 @@ jobs:
           ls -la
           pwd
       - name: generate
-        run: java -jar jsonschema2pojo.jar -srcPath=/tmp/workdir/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
+        run: java -jar jsonschema2pojo.jar -srcPath=/home/runner/work/json-schema-test/json-schema-test/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
+      - name: change directory
+        run: cd /tmp/workdir
       - name: push
         uses: wu-yu-xuan/deploy-github-pages@action
         with:
@@ -34,7 +36,7 @@ jobs:
           commit_message: ${{ github.event.head_commit.message }}
           publish_repo: DominikYang/java-demo-test
           publish_branch: master
-          source_dir: output
+          source_dir: /tmp/workdir/output
           dest_dir: src/main/java
 
 
