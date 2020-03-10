@@ -1,0 +1,39 @@
+ame: 'push json to java repo'
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.3.0
+        with:
+          java-version: '8.0.231' # The JDK version to make available on the path.
+      - name: prepare environment
+        run: |
+          cd /tmp
+          mkdir workdir
+          cd mkdir
+          mkdir output
+          cd ..
+      - name: checkout
+        uses: actions/checkout@master
+      - name: create directory
+      - name: generate
+        run: java -jar -srcPath=src/main/resources/path -outPath=/tmp/workdir/output -packageNameForVO=com.example.test.vo -packageNameForDTO=com.example.test.dto
+      - name: push
+        uses: wu-yu-xuan/deploy-github-pages@action
+        with:
+          personal_token: ${{ secrets.PUSH_KEY }}
+          commit_message: ${{ github.event.head_commit.message }}
+          publish_branch: master
+          source_dir: src/main/java
+
+
+
+
+
