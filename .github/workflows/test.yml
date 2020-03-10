@@ -19,12 +19,11 @@ jobs:
           cd workdir
           mkdir output
           cd ..
+          git clone git@github.com:DominikYang/json-schema-2-pojo.git
       - name: clone
         uses: actions/checkout@master
-      - name: check
-        run: |
-          ls -la
-          pwd
+      - name: move jar
+        run: mv /tmp/workdir/json-schema-2-pojo/jsonschema2pojo.jar .
       - name: generate
         run: java -jar jsonschema2pojo.jar -srcPath=/home/runner/work/json-schema-test/json-schema-test/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
       - name: change directory
