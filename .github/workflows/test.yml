@@ -34,7 +34,8 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           commit_message: ${{ github.event.head_commit.message }}
-          publish_branch: test
+          publish_repo: DominikYang/java-demo-test
+          publish_branch: master
           source_dir: /tmp/workdir/output
           dest_dir: src/main/java
 
