@@ -31,10 +31,12 @@ jobs:
           mkdir output
           cd ..
           git clone -b action git@github.com:DominikYang/json-schema-to-pojo.git
+          ls -la
+          pwd
       - name: clone
         uses: actions/checkout@master
       - name: move jar
-        run: mv /tmp/jsonschema2pojo.jar .
+        run: mv /tmp/workdir/jsonschema2pojo.jar .
       - name: generate
         run: java -jar jsonschema2pojo.jar -srcPath=/home/runner/work/json-schema-test/json-schema-test/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
       - name: change directory
