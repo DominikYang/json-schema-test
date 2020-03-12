@@ -31,13 +31,10 @@ jobs:
           mkdir output
           cd ..
           git clone -b action git@github.com:DominikYang/json-schema-to-pojo.git
+          cd json-schema-to-pojo
           ls -la
-          pwd
       - name: clone
         uses: actions/checkout@master
-      - run: |
-         cd json-schema-to-pojo
-         ls -la
       - name: move jar
         run: mv /tmp/json-schema-to-pojo/jsonschema2pojo.jar .
       - name: generate
