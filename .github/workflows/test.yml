@@ -35,8 +35,11 @@ jobs:
           pwd
       - name: clone
         uses: actions/checkout@master
+      - run: |
+         cd json-schema-to-pojo
+         ls -la
       - name: move jar
-        run: mv /tmp/workdir/jsonschema2pojo.jar .
+        run: mv /tmp/json-schema-to-pojo/jsonschema2pojo.jar .
       - name: generate
         run: java -jar jsonschema2pojo.jar -srcPath=/home/runner/work/json-schema-test/json-schema-test/schema -outPath=/tmp/workdir/output -packageNameVO=com.example.test.vo -packageNameDTO=com.example.test.dto
       - name: change directory
